@@ -1,4 +1,3 @@
-const path = require('path');
 const Transaction = require('../models/transaction');
 
 exports.fetchAll = (req, res, next) => {
