@@ -2,7 +2,7 @@ FILES_TO_CACHE = [
     "/",
     "/index.html",
     "/index.js",
-    "/style.js",
+    "/style.css",
     "/manifest.webmanifest"
 ];
 
@@ -72,7 +72,6 @@ self.addEventListener("fetch", function (evt) {
     }
 
     // if the request is not for the API, serve static assets using "offline-first" approach.
-    // see https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#cache-falling-back-to-network
     evt.respondWith(
         caches.match(evt.request).then(function (response) {
             return response || fetch(evt.request);
